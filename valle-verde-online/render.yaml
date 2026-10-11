@@ -1,0 +1,16 @@
+# Blueprint opcional de Render: "New + > Blueprint" y elige tu repositorio
+services:
+  - type: web
+    name: valle-verde-online
+    runtime: node
+    plan: free            # cámbialo a "starter" si quieres que no se duerma
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: MAX_PLAYERS
+        value: 8
+      - key: MAX_MODEL_MB
+        value: 20
